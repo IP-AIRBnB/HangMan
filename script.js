@@ -36,3 +36,12 @@ window.addEventListener('keydown', e => {
         }
     }
 });
+
+const figureParts = document.querySelectorAll('.figure-part');
+
+function updateFigure() {
+    figureParts.forEach((part, index) => {
+        const errors = wrongLetters.length;
+        part.style.display = index < errors ? 'block' : 'none';
+    });
+}
