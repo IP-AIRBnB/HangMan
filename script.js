@@ -45,3 +45,14 @@ function updateFigure() {
         part.style.display = index < errors ? 'block' : 'none';
     });
 }
+
+function checkEndGame() {
+    const innerWord = wordE1.innerText.replace(/\n/g, '');
+    if (innerWord === selectedWord) {
+        finalMessage.innerText = 'Congratulations! You won! 🎉';
+        popup.style.display = 'flex';
+    } else if (wrongLetters.length === figureParts.length) {
+        finalMessage.innerText = `Unfortunately, you lost. 😢 The word was "${selectedWord}".`;
+        popup.style.display = 'flex';
+    }
+}
