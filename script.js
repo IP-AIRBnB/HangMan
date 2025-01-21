@@ -56,3 +56,12 @@ function checkEndGame() {
         popup.style.display = 'flex';
     }
 }
+
+const notification = document.getElementById('notification-container');
+
+function showNotification() {
+    notification.classList.add('show');
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 2000);
+}
