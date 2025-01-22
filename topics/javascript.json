@@ -1,0 +1,22 @@
+[
+    { "word": "application", "hint": "A software designed to perform a specific task." },
+    { "word": "programming", "hint": "The process of writing computer code." },
+    { "word": "function", "hint": "A block of code designed to perform a task." },
+    { "word": "variable", "hint": "A named container for storing data." },
+    { "word": "array", "hint": "A data structure used to store multiple values." },
+    { "word": "loop", "hint": "A programming construct used to repeat a block of code." },
+    { "word": "object", "hint": "A collection of key-value pairs." },
+    { "word": "event", "hint": "An action that the browser responds to, like a click." },
+    { "word": "dom", "hint": "The Document Object Model, used to interact with HTML elements." },
+    { "word": "string", "hint": "A sequence of characters used to represent text." },
+    { "word": "number", "hint": "A data type used to represent numeric values." },
+    { "word": "boolean", "hint": "A data type that represents either true or false." },
+    { "word": "console", "hint": "A built-in object used for debugging and output." },
+    { "word": "promise", "hint": "A way to handle asynchronous operations in JavaScript." },
+    { "word": "callback", "hint": "A function passed into another function as an argument." },
+    { "word": "scope", "hint": "The context in which a variable is accessible." },
+    { "word": "closure", "hint": "A function that retains access to its lexical scope." },
+    { "word": "class", "hint": "A blueprint for creating objects in JavaScript." },
+    { "word": "constructor", "hint": "A special function used to initialize objects." },
+    { "word": "this", "hint": "A keyword referring to the current object context." }
+]

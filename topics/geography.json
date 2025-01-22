@@ -1,0 +1,22 @@
+[
+    { "word": "africa", "hint": "The second largest continent" },
+    { "word": "asia", "hint": "The largest continent" },
+    { "word": "amazon", "hint": "The largest river in the world by volume" },
+    { "word": "europe", "hint": "The continent known for its historical influence" },
+    { "word": "antarctica", "hint": "The coldest and driest continent" },
+    { "word": "india", "hint": "A country famous for its diverse culture and history" },
+    { "word": "australia", "hint": "The only country that is also a continent" },
+    { "word": "sahara", "hint": "The largest hot desert in the world" },
+    { "word": "mount everest", "hint": "The highest mountain on Earth" },
+    { "word": "eiffel tower", "hint": "Famous landmark located in Paris, France" },
+    { "word": "brazil", "hint": "A country known for its Amazon rainforest" },
+    { "word": "egypt", "hint": "Famous for its ancient pyramids" },
+    { "word": "china", "hint": "The most populous country in the world" },
+    { "word": "japan", "hint": "An island nation famous for technology and culture" },
+    { "word": "london", "hint": "Capital city of the United Kingdom" },
+    { "word": "new york", "hint": "Famous city known for the Statue of Liberty" },
+    { "word": "rome", "hint": "The capital of Italy, known for its ancient ruins" },
+    { "word": "rio de janeiro", "hint": "A famous Brazilian city with Christ the Redeemer statue" },
+    { "word": "north pole", "hint": "The northernmost point on Earth" },
+    { "word": "pacific ocean", "hint": "The largest and deepest ocean on Earth" }
+]

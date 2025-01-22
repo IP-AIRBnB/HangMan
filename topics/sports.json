@@ -1,0 +1,22 @@
+[
+    { "word": "soccer", "hint": "The most popular sport in the world" },
+    { "word": "basketball", "hint": "A sport played with a hoop and ball" },
+    { "word": "tennis", "hint": "A sport played with rackets and a ball" },
+    { "word": "cricket", "hint": "A bat-and-ball sport popular in countries like England and India" },
+    { "word": "rugby", "hint": "A sport similar to football, popular in the UK and New Zealand" },
+    { "word": "baseball", "hint": "A bat-and-ball sport popular in the US" },
+    { "word": "hockey", "hint": "A sport played on ice or a field with a puck or ball" },
+    { "word": "golf", "hint": "A sport where players use clubs to hit a ball into holes" },
+    { "word": "swimming", "hint": "A sport where athletes race in water" },
+    { "word": "boxing", "hint": "A combat sport where two people fight with gloves" },
+    { "word": "formula 1", "hint": "A high-speed motorsport featuring race cars" },
+    { "word": "cycling", "hint": "A sport involving racing on bicycles" },
+    { "word": "volleyball", "hint": "A sport played with a ball and a net, typically on a beach or court" },
+    { "word": "american football", "hint": "A sport known for its tackling and touchdown scoring" },
+    { "word": "wrestling", "hint": "A combat sport where athletes grapple and fight to pin each other" },
+    { "word": "skiing", "hint": "A sport where athletes race down snowy slopes" },
+    { "word": "gymnastics", "hint": "A sport that involves performing acrobatic feats and routines" },
+    { "word": "fencing", "hint": "A combat sport using swords" },
+    { "word": "water polo", "hint": "A team sport played in water with a ball" },
+    { "word": "handball", "hint": "A sport where players use their hands to score goals in a net" }
+]

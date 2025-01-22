@@ -1,93 +1,101 @@
+// Get references to DOM elements
 const wordE1 = document.getElementById('word');
 const wrongLettersE1 = document.getElementById('wrong-letters');
 const playAgainBtn = document.getElementById('play-button');
-const changeTopicBtn = document.getElementById('change-topic-button');
 const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
+const topicSelectionE1 = document.getElementById('topic-selection');
+const gameE1 = document.getElementById('game');
 const currentTopicE1 = document.getElementById('current-topic');
 const hintE1 = document.getElementById('hint');
+const changeTopicBtn = document.getElementById('change-topic-button');
+
+let selectedWord = '';
+let selectedHint = '';
+let selectedWordObj = {};
+const correctLetters = [];
+const wrongLetters = [];
+let topicWords = [];
 
 const figureParts = document.querySelectorAll(".figure-part");
 
-let selectedWordObj;
-let selectedWord;
-let selectedHint;
-let topicWords;
-let correctLetters = [];
-let wrongLetters = [];
+// Topic selection
+document.querySelectorAll('.topic-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const topic = btn.getAttribute('data-topic');
+        loadTopic(topic);
+    });
+});
 
-// Dynamically load the topic file
 function loadTopic(topic) {
-    switch(topic) {
-        case 'javascript':
-            topicWords = javascriptTopic;
-            break;
-        case 'sports':
-            topicWords = sportsTopic;
-            break;
-        case 'geography':
-            topicWords = geographyTopic;
-            break;
-    }
-
-    // Select a random word from the chosen topic
-    selectedWordObj = topicWords[Math.floor(Math.random() * topicWords.length)];
-    selectedWord = selectedWordObj.word;
-    selectedHint = selectedWordObj.hint;
-
-    currentTopicE1.innerText = `Current Topic: ${topic.charAt(0).toUpperCase() + topic.slice(1)}`;
-    displayWord();
-    showHint();
+    fetch(`topics/${topic}.json`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load file');
+            }
+            return response.json();
+        })
+        .then(data => {
+            topicWords = data;
+            selectedWordObj = topicWords[Math.floor(Math.random() * topicWords.length)];
+            selectedWordObj.topic = topic; // Store the topic for reloading
+            selectedWord = selectedWordObj.word;
+            selectedHint = selectedWordObj.hint;
+            currentTopicE1.innerText = `Current Topic: ${topic.charAt(0).toUpperCase() + topic.slice(1)}`;
+            displayWord();
+            showHint();
+            topicSelectionE1.style.display = 'none';
+            gameE1.style.display = 'block';
+        })
+        .catch(() => {
+            alert('Failed to load topic. Please try again.');
+        });
 }
 
-// Show hidden word
 function displayWord() {
-    wordE1.innerHTML = `
-    ${selectedWord
-    .split('')
-    .map(
-        letter =>`
-        <span class="letter">
-        ${correctLetters.includes(letter) ? letter : ''}
-        </span>
+    wordE1.innerHTML = `${selectedWord
+        .split('')
+        .map(
+            letter => `
+            <span class="letter">
+            ${correctLetters.includes(letter) ? letter : ''}
+            </span>
         `
-    )
-    .join('')}
-    `;
+        )
+        .join('')}`;
 
-    const innerWord = wordE1.innerText.replace(/\n/g, '');
+    const innerWord = wordE1.innerText.replace(/\n/g, ''); // Get the displayed word without line breaks
 
-    if(innerWord === selectedWord) {
-        finalMessage.innerText = 'Congratulations! You won! 😃';
-        popup.style.display = 'flex';
+    if (innerWord === selectedWord) {
+        finalMessage.innerText = 'Congratulations! You won! 🎉';
+        showPopup();
     }
 }
 
-// Update the wrong letters
-function updateWrongLetterE1() {
-    wrongLettersE1.innerHTML = `
-    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
-    ${wrongLetters.map(letter => `<span>${letter}</span>`)}
-    `;
+function showHint() {
+    hintE1.innerText = `Hint: ${selectedHint}`;
+}
 
+function updateWrongLetterE1() {
+    wrongLettersE1.innerHTML = `${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''} ${wrongLetters.map(letter => `<span>${letter}</span>`)}`;
     figureParts.forEach((part, index) => {
         const errors = wrongLetters.length;
-
-        if (index < errors) {
-            part.style.display = 'block';
-        } else {
-            part.style.display = 'none';
-        }
+        part.style.display = index < errors ? 'block' : 'none';
     });
 
     if (wrongLetters.length === figureParts.length) {
-        finalMessage.innerText = 'Unfortunately you lost. 😕';
-        popup.style.display = 'flex';
+        finalMessage.innerText = 'Unfortunately, you lost. 😕';
+        showPopup();
     }
 }
 
-// Show notification
+function resetFigureParts() {
+    figureParts.forEach(part => {
+        part.style.display = 'none';
+    });
+}
+
 function showNotification() {
     notification.classList.add('show');
     setTimeout(() => {
@@ -95,16 +103,41 @@ function showNotification() {
     }, 2000);
 }
 
-// Show hint
-function showHint() {
-    hintE1.innerText = `Hint: ${selectedHint}`;
+function showPopup() {
+    popup.style.display = 'flex'; // Show popup
 }
 
-// Keydown letter press
+function resetGame() {
+    correctLetters.splice(0);
+    wrongLetters.splice(0);
+    resetFigureParts();
+    wrongLettersE1.innerHTML = ''; // Clear wrong letters
+    wordE1.innerHTML = ''; // Clear word display
+    hintE1.innerText = ''; // Clear hint
+    popup.style.display = 'none'; // Hide popup
+}
+
+// Event listener for Change Topic button
+changeTopicBtn.addEventListener('click', () => {
+    resetGame();
+    gameE1.style.display = 'none'; // Hide game screen
+    topicSelectionE1.style.display = 'block'; // Show topic selection screen
+});
+
+// Event listener for Play Again button
+playAgainBtn.addEventListener('click', () => {
+    resetGame();
+    if (selectedWordObj.topic) {
+        loadTopic(selectedWordObj.topic);
+    } else {
+        alert('Failed to reload the topic. Please refresh the page.');
+    }
+});
+
+// Event listener for keydown (guessing letters)
 window.addEventListener('keydown', e => {
     if (e.keyCode >= 65 && e.keyCode <= 90) {
         const letter = e.key;
-
         if (selectedWord.includes(letter)) {
             if (!correctLetters.includes(letter)) {
                 correctLetters.push(letter);
@@ -122,25 +155,3 @@ window.addEventListener('keydown', e => {
         }
     }
 });
-
-// Restart game and play again
-playAgainBtn.addEventListener('click', () => {
-    correctLetters = [];
-    wrongLetters = [];
-    loadTopic('javascript'); // Reset to JavaScript as default topic
-    popup.style.display = 'none';
-});
-
-// Change topic
-changeTopicBtn.addEventListener('click', () => {
-    const newTopic = prompt('Enter a topic: javascript, sports, geography');
-    if (newTopic && ['javascript', 'sports', 'geography'].includes(newTopic)) {
-        loadTopic(newTopic);
-        popup.style.display = 'none';
-    } else {
-        alert('Invalid topic! Please choose from javascript, sports, or geography.');
-    }
-});
-
-// Initialize game with a default topic
-loadTopic('javascript');
