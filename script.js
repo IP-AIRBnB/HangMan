@@ -4,22 +4,38 @@ const playAgainBtn = document.getElementById('play-button');
 const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
-const hintE1 = document.getElementById('hint'); // Add a reference to the hint element
+const hintE1 = document.getElementById('hint'); // Reference to the hint element
 
 const figureParts = document.querySelectorAll(".figure-part");
 
-const wordHints = {
-    'application': 'A program designed to perform a group of tasks.',
-    'programming': 'The process of creating software using code.',
-    'interface': 'A shared boundary across which two separate components interact.',
-    'wizard': 'A user interface that automates complex tasks.'
-    // Add more words and corresponding hints as necessary
-};
+// Updated wordList with word and hint
+const wordList = [
+    { word: 'application', hint: 'A software designed to perform a specific task.' },
+    { word: 'programming', hint: 'The process of writing computer code.' },
+    { word: 'interface', hint: 'A point where two systems meet and interact.' },
+    { word: 'wizard', hint: 'A person skilled in magic or a computing expert.' },
+    { word: 'variable', hint: 'A named container for storing data.' },
+    { word: 'function', hint: 'A block of code designed to perform a task.' },
+    { word: 'array', hint: 'A data structure used to store multiple values.' },
+    { word: 'object', hint: 'A collection of properties and methods.' },
+    { word: 'boolean', hint: 'A data type with two possible values: true or false.' },
+    { word: 'method', hint: 'A function that is a property of an object.' },
+    { word: 'loop', hint: 'A programming structure that repeats a block of code.' },
+    { word: 'event', hint: 'An action that is handled by a function in JavaScript.' },
+    { word: 'promise', hint: 'A way to handle asynchronous operations in JavaScript.' },
+    { word: 'debug', hint: 'The process of identifying and fixing issues in code.' },
+    { word: 'parameter', hint: 'A variable used in a function to accept input.' },
+    { word: 'constructor', hint: 'A special function used to create and initialize an object.' },
+    { word: 'class', hint: 'A blueprint for creating objects with specific properties and methods.' },
+    { word: 'DOM', hint: 'A programming interface for web documents.' },
+    { word: 'async', hint: 'A keyword used to define functions that return a promise.' },
+    { word: 'await', hint: 'A keyword used to pause the execution of an async function until a promise resolves.' }
+];
 
-const words = Object.keys(wordHints); // Get all the words from the wordHints object
-
-let selectedWord = words[Math.floor(Math.random() * words.length)];
-let selectedHint = wordHints[selectedWord]; // Get the corresponding hint for the selected word
+// Select a random word from wordList
+let selectedWordObj = wordList[Math.floor(Math.random() * wordList.length)];
+let selectedWord = selectedWordObj.word;
+let selectedHint = selectedWordObj.hint;
 
 const correctLetters = [];
 const wrongLetters = [];
@@ -119,8 +135,10 @@ playAgainBtn.addEventListener('click', () => {
     correctLetters.splice(0);
     wrongLetters.splice(0);
 
-    selectedWord = words[Math.floor(Math.random() * words.length)];
-    selectedHint = wordHints[selectedWord]; // Get the new hint for the new word
+    // Select a new word and hint
+    selectedWordObj = wordList[Math.floor(Math.random() * wordList.length)];
+    selectedWord = selectedWordObj.word;
+    selectedHint = selectedWordObj.hint;
 
     displayWord();
     updateWrongLetterE1();
