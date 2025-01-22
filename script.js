@@ -84,6 +84,12 @@ function updateWrongLetterE1() {
         part.style.display = index < errors ? 'block' : 'none';
     });
 
+    // Display remaining guesses
+    const remainingGuesses = totalGuesses - wrongLetters.length; // Calculate remaining guesses
+    if (remainingGuesses >= 0) {
+        hintE1.innerText = `Remaining Guesses: ${remainingGuesses}`; // Update hint with remaining guesses
+    }
+
     if (wrongLetters.length === figureParts.length) {
         finalMessage.innerText = 'Unfortunately, you lost. 😕';
         showPopup();
