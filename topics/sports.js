@@ -1,0 +1,22 @@
+const sportsTopic = [
+    { word: 'ronaldo', hint: 'A famous Portuguese footballer, known for his incredible goals.' },
+    { word: 'messi', hint: 'An Argentine footballer, often considered one of the greatest of all time.' },
+    { word: 'federer', hint: 'A Swiss tennis legend, known for his elegance on the court.' },
+    { word: 'jordan', hint: 'An American basketball player, considered one of the greatest ever.' },
+    { word: 'serena', hint: 'An American tennis player, widely regarded as one of the best in the sport.' },
+    { word: 'lebron', hint: 'An American basketball player, often compared to Michael Jordan.' },
+    { word: 'tiger woods', hint: 'A legendary American golfer, known for his dominance in the sport.' },
+    { word: 'usain bolt', hint: 'A Jamaican sprinter, known as the fastest man in the world.' },
+    { word: 'michael phelps', hint: 'An American swimmer, the most decorated Olympian of all time.' },
+    { word: 'messi', hint: 'An Argentine footballer, often considered one of the greatest of all time.' },
+    { word: 'pele', hint: 'A Brazilian footballer, widely regarded as one of the best football players ever.' },
+    { word: 'brady', hint: 'An American football player, widely regarded as one of the best quarterbacks.' },
+    { word: 'mccaw', hint: 'A famous rugby player from New Zealand, known for leading his team to victory.' },
+    { word: 'maradona', hint: 'An Argentine footballer, regarded as one of the greatest in history.' },
+    { word: 'pacquiao', hint: 'A Filipino boxer, known for his incredible career and speed.' },
+    { word: 'bolt', hint: 'A Jamaican sprinter, known for his world records in the 100m and 200m.' },
+    { word: 'sharapova', hint: 'A Russian tennis player, former world number one in women\'s tennis.' },
+    { word: 'mosley', hint: 'An American boxer, known for his accomplishments in the ring.' },
+    { word: 'sachin', hint: 'An Indian cricketer, widely regarded as one of the best batsmen in history.' },
+    { word: 'skinner', hint: 'An English cricketer, famous for his all-rounder skills.' }
+];

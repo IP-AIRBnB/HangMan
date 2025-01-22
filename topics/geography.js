@@ -1,0 +1,22 @@
+const geographyTopic = [
+    { word: 'africa', hint: 'The second-largest continent on Earth.' },
+    { word: 'asia', hint: 'The largest continent, home to China and India.' },
+    { word: 'antarctica', hint: 'The southernmost continent, covered by ice.' },
+    { word: 'europe', hint: 'A continent known for its diverse cultures and history.' },
+    { word: 'oceania', hint: 'A region that includes Australia and many islands.' },
+    { word: 'india', hint: 'A country in South Asia, known for the Taj Mahal.' },
+    { word: 'brazil', hint: 'A country in South America, famous for the Amazon rainforest.' },
+    { word: 'egypt', hint: 'A country in North Africa, famous for the pyramids.' },
+    { word: 'atlantic', hint: 'The ocean located between the Americas and Europe/Africa.' },
+    { word: 'pacific', hint: 'The largest and deepest ocean, located between Asia and the Americas.' },
+    { word: 'paris', hint: 'The capital city of France, known for the Eiffel Tower.' },
+    { word: 'new york', hint: 'A major city in the United States, known for the Statue of Liberty.' },
+    { word: 'tokyo', hint: 'The capital city of Japan, known for its modern technology.' },
+    { word: 'sydney', hint: 'A major city in Australia, known for the Opera House.' },
+    { word: 'london', hint: 'The capital city of the United Kingdom.' },
+    { word: 'cairo', hint: 'The capital city of Egypt, near the pyramids.' },
+    { word: 'rio', hint: 'A city in Brazil, famous for the Carnival.' },
+    { word: 'rome', hint: 'The capital of Italy, known for the Colosseum.' },
+    { word: 'mumbai', hint: 'A major city in India, known for Bollywood.' },
+    { word: 'los angeles', hint: 'A city in the United States, known for Hollywood.' }
+];
