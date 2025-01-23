@@ -1,0 +1,64 @@
+{
+  "animals": [
+    {
+      "name": "Lion",
+      "hint": "The king of the jungle."
+    },
+    {
+      "name": "Tiger",
+      "hint": "A large striped cat found in Asia."
+    },
+    {
+      "name": "Elephant",
+      "hint": "The largest land animal."
+    },
+    {
+      "name": "Giraffe",
+      "hint": "The tallest animal, known for its long neck."
+    },
+    {
+      "name": "Zebra",
+      "hint": "Known for its black and white stripes."
+    },
+    {
+      "name": "Kangaroo",
+      "hint": "A marsupial that hops and is native to Australia."
+    },
+    {
+      "name": "Panda",
+      "hint": "A black and white bear that primarily eats bamboo."
+    },
+    {
+      "name": "Dolphin",
+      "hint": "A highly intelligent marine mammal."
+    },
+    {
+      "name": "Eagle",
+      "hint": "A bird of prey known for its keen eyesight."
+    },
+    {
+      "name": "Shark",
+      "hint": "A large fish known for its sharp teeth."
+    },
+    {
+      "name": "Penguin",
+      "hint": "A flightless bird that lives in cold regions."
+    },
+    {
+      "name": "Buffalo",
+      "hint": "A large, strong animal often found in herds."
+    },
+    {
+      "name": "Flamingo",
+      "hint": "A pink bird known for standing on one leg."
+    },
+    {
+      "name": "Cheetah",
+      "hint": "The fastest land animal."
+    },
+    {
+      "name": "Koala",
+      "hint": "A tree-dwelling marsupial native to Australia."
+    }
+  ]
+}
