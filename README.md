@@ -1,4 +1,19 @@
-# Internet Programming Assignment - Hangman Game
+# Title: Hangman
+## Group: 6
+
+### Group Members:
+
+| Name          | Id          |
+|---------------|-------------|
+|Kaleb Mesfin   |0742/15      |
+|Kidus Efrem    |0773/15      |
+|Kidus Yosef    |0775/15      |
+|Leul Teferi    |0817/15      |
+|Natnael Solomon|1062/15      |
+|Nebiyu Samuel  |1076/15      |
+
+---
+
 
 ## Overview
 This project is a browser-based implementation of the classic Hangman game. It allows players to choose from various topics and guess the letters of a hidden word based on hints provided. The game was developed using HTML, CSS, and JavaScript.
