@@ -243,6 +243,29 @@ h3 {
     bottom: 20px;
 }
 
+#difficulty-selection {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#difficulty-selection button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#difficulty-selection button:hover {
+  background-color: #3e8e41;
+}
+
 
 @keyframes fadeIn {
     from {
