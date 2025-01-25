@@ -17,6 +17,7 @@ let selectedWordObj = {};
 const correctLetters = [];
 const wrongLetters = [];
 let topicWords = [];
+let maxWrongGuesses = 6; // Default to 6 wrong guesses
 
 const figureParts = document.querySelectorAll(".figure-part");
 
@@ -117,6 +118,18 @@ function resetGame() {
     popup.style.display = 'none'; // Hide popup
 }
 
+//function for setting difficulty
+function setDifficulty(selectedDifficulty) {
+  if (selectedDifficulty === "easy") {
+    maxWrongGuesses = 8; 
+  } else if (selectedDifficulty === "medium") {
+    maxWrongGuesses = 5;
+  } else if (selectedDifficulty === "hard") {
+    maxWrongGuesses = 3;
+  }
+  resetGame(); 
+}
+
 // Event listener for Change Topic button
 changeTopicBtn.addEventListener('click', () => {
     resetGame();
@@ -154,4 +167,17 @@ window.addEventListener('keydown', e => {
             }
         }
     }
+});
+
+//Event Listeners for Difficulty Buttons
+document.getElementById("easy-btn").addEventListener("click", () => {
+  setDifficulty("easy");
+});
+
+document.getElementById("medium-btn").addEventListener("click", () => {
+  setDifficulty("medium");
+});
+
+document.getElementById("hard-btn").addEventListener("click", () => {
+  setDifficulty("hard");
 });
